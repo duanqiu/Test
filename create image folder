@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Nov 18 19:13:11 2017
+
+@author: adolph
+"""
+
+import os
+
+filepath="C:\\Users\\adolph\\Desktop\\ImageData"
+pathDir =  os.listdir(filepath)
+for i,allDir in enumerate(pathDir):
+    newname='s'+str(i+1)
+    postname = os.path.join(filepath, allDir)
+    newname = os.path.join(filepath,newname)
+    os.rename(postname,newname)
+    persondir=os.listdir(newname)
+    for j,afile in enumerate(persondir):
+        pname = os.path.join(newname, afile)
+        nname = os.path.join(newname,str(j+1)+'.jpg')
+        os.rename(pname,nname)
+        
